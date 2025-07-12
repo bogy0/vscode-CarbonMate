@@ -9,7 +9,7 @@ module.exports = [
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
-        ecmaVersion: 6,
+        ecmaVersion: 2022,
         sourceType: 'module'
       }
     },
@@ -17,9 +17,9 @@ module.exports = [
       '@typescript-eslint': typescript
     },
     rules: {
-      '@typescript-eslint/naming-convention': 'warn',
       'semi': 'warn',
-      'prefer-const': 'warn'
+      'prefer-const': 'warn',
+      'no-unused-vars': 'warn'
     }
   },
   {
