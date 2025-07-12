@@ -1,0 +1,67 @@
+{
+  "name": "vscode-carbonmate",
+  "displayName": "CarbonMate",
+  "description": "VS Code extension that provides Carbon Design System token suggestions for SCSS files. Automatically detects SCSS files and suggests Carbon spacing tokens when writing CSS properties like margin and padding.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:scss"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "CarbonMate",
+      "properties": {
+        "carbonmate.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable CarbonMate token suggestions"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "carbonmate.fixAll",
+        "title": "CarbonMate: Fix All Hardcoded Spacing Values",
+        "category": "CarbonMate"
+      },
+      {
+        "command": "carbonmate.refresh",
+        "title": "CarbonMate: Refresh Code Check",
+        "category": "CarbonMate"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "carbon",
+    "design-system",
+    "scss",
+    "tokens",
+    "spacing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/vscode": "^1.102.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@carbon/layout": "^10.0.0"
+  }
+}

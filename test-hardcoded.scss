@@ -1,0 +1,36 @@
+// Test file for CarbonMate hardcoded value detection
+// Add the Carbon layout import first
+@use '@carbon/layout';
+
+// This file contains hardcoded spacing values that CarbonMate can suggest replacements for
+// Select any of the hardcoded values below and use Ctrl+Shift+P (or Cmd+Shift+P) to see "Refactor" options
+
+.my-component {
+  // These hardcoded values should trigger Carbon token suggestions
+  margin: 16px;           // Should suggest layout.$spacing-05 (16px)
+  padding: 24px;          // Should suggest layout.$spacing-06 (24px)
+  margin-top: 32px;       // Should suggest layout.$spacing-07 (32px)
+  padding-bottom: 8px;    // Should suggest layout.$spacing-03 (8px)
+  
+  // Rem values should also be detected
+  margin-left: 1rem;      // Should suggest layout.$spacing-05 (16px)
+  padding-right: 1.5rem;  // Should suggest layout.$spacing-06 (24px)
+  
+  // Em values should also be detected
+  margin-bottom: 2em;     // Should suggest layout.$spacing-07 (32px)
+  
+  // Values that are close but not exact matches
+  margin: 18px;           // Should suggest layout.$spacing-05 (16px) - 2px difference
+  padding: 26px;          // Should suggest layout.$spacing-06 (24px) - 2px difference
+  
+  // Values that are too far from Carbon tokens (should not suggest)
+  margin: 50px;           // Too far from any Carbon token
+  padding: 100px;         // Too far from any Carbon token
+}
+
+// Test with different spacing values
+.another-component {
+  margin: 40px;           // Should suggest layout.$spacing-08 (40px)
+  padding: 64px;          // Should suggest layout.$spacing-10 (64px)
+  margin-top: 96px;       // Should suggest layout.$spacing-12 (96px)
+} 
