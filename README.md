@@ -59,13 +59,16 @@ The extension provides suggestions for all 13 Carbon spacing tokens:
 4. Type `$` to trigger the suggestions
 5. Select a Carbon spacing token from the dropdown
 
-### 2. Hardcoded Value Replacement
+### 2. Magic Number Replacement
 
 1. Open a SCSS file with `@use '@carbon/layout';` import
-2. Select any hardcoded spacing value (e.g., `16px`, `1rem`, `2em`)
-3. Use `Ctrl+Shift+P` (or `Cmd+Shift+P`) to open command palette
-4. Look for "Refactor" options to replace with Carbon tokens
-5. The extension will suggest the closest Carbon token
+2. Notice CarbonMate underlines hardcoded spacing values (e.g., `16px`, `1rem`, `2em`)
+3. Use `Ctrl+.` (Windows/Linux) or `Cmd+.` (Mac) to quick fix one of the selected value - the extension will suggest the closest Carbon token
+4. Alternatively:
+   - Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)
+   - Type `CarbonMate`
+   - Select `Fix all hardcoded spacing values`
+5. The extension will automatically replace all hardcoded values with their closest matching Carbon tokens in the file
 
 ### Example
 
