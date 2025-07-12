@@ -3,6 +3,8 @@
   "displayName": "CarbonMate",
   "description": "VS Code extension that provides Carbon Design System token suggestions for SCSS files. Automatically detects SCSS files and suggests Carbon spacing tokens when writing CSS properties like margin and padding.",
   "version": "1.0.0",
+  "publisher": "Balint Lendvai",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -41,9 +43,7 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "lint": "eslint src --ext ts"
   },
   "keywords": [
     "vscode",

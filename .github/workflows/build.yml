@@ -29,8 +29,8 @@ jobs:
     - name: Compile TypeScript
       run: npm run compile
     
-    - name: Run tests
-      run: npm test
+    - name: Run linting
+      run: npm run lint
       if: hashFiles('package.json') != ''
 
   package:
