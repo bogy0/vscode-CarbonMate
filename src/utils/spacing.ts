@@ -1,7 +1,7 @@
-import * as vscode from 'vscode'
-import { spacing01, spacing02, spacing03, spacing04, spacing05, spacing06, spacing07, spacing08, spacing09, spacing10, spacing11, spacing12, spacing13 } from '@carbon/layout'
-import { CarbonSpacingToken } from '../types/spacing'
-import { SPACING_PROPERTIES } from './constants'
+import * as vscode from 'vscode';
+import { spacing01, spacing02, spacing03, spacing04, spacing05, spacing06, spacing07, spacing08, spacing09, spacing10, spacing11, spacing12, spacing13 } from '@carbon/layout';
+import { CarbonSpacingToken } from '../types/spacing';
+import { SPACING_PROPERTIES } from './constants';
 
 export function getCarbonSpacingTokens(): CarbonSpacingToken[] {
   return [
@@ -18,15 +18,15 @@ export function getCarbonSpacingTokens(): CarbonSpacingToken[] {
     { name: 'layout.$spacing-11', value: spacing11, rem: '5rem', px: '80px', description: '5XL spacing', pxValue: 80 },
     { name: 'layout.$spacing-12', value: spacing12, rem: '6rem', px: '96px', description: '6XL spacing', pxValue: 96 },
     { name: 'layout.$spacing-13', value: spacing13, rem: '10rem', px: '160px', description: '7XL spacing', pxValue: 160 }
-  ]
+  ];
 }
 
 export function isSpacingProperty(text: string): boolean {
-  return SPACING_PROPERTIES.some(prop => text.includes(prop))
+  return SPACING_PROPERTIES.some(prop => text.includes(prop));
 }
 
 export function hasCarbonLayoutImport(document: vscode.TextDocument): boolean {
-  const text = document.getText()
+  const text = document.getText();
   // Check for different quote styles and variations
   const importPatterns = [
     "@use '@carbon/layout'",
@@ -35,47 +35,47 @@ export function hasCarbonLayoutImport(document: vscode.TextDocument): boolean {
     '@use "@carbon/layout";',
     "@use @carbon/layout",
     "@use @carbon/layout;"
-  ]
-  return importPatterns.some(pattern => text.includes(pattern))
+  ];
+  return importPatterns.some(pattern => text.includes(pattern));
 }
 
 export function findClosestCarbonToken(targetPx: number): CarbonSpacingToken {
-  const tokens = getCarbonSpacingTokens()
-  let closest = tokens[0]
-  let minDifference = Math.abs(targetPx - closest.pxValue)
+  const tokens = getCarbonSpacingTokens();
+  let closest = tokens[0];
+  let minDifference = Math.abs(targetPx - closest.pxValue);
   
   for (const token of tokens) {
-    const difference = Math.abs(targetPx - token.pxValue)
+    const difference = Math.abs(targetPx - token.pxValue);
     if (difference < minDifference) {
-      minDifference = difference
-      closest = token
+      minDifference = difference;
+      closest = token;
     }
   }
   
-  return closest
+  return closest;
 }
 
 export function parseSpacingValue(value: string): number | null {
   // Remove whitespace and convert to lowercase
-  const cleanValue = value.trim().toLowerCase()
+  const cleanValue = value.trim().toLowerCase();
   
   // Match px values (e.g., "16px", "24px")
-  const pxMatch = cleanValue.match(/^(\d+(?:\.\d+)?)px$/)
+  const pxMatch = cleanValue.match(/^(\d+(?:\.\d+)?)px$/);
   if (pxMatch) {
-    return parseFloat(pxMatch[1])
+    return parseFloat(pxMatch[1]);
   }
   
   // Match rem values (e.g., "1rem", "1.5rem") - convert to px (assuming 16px base)
-  const remMatch = cleanValue.match(/^(\d+(?:\.\d+)?)rem$/)
+  const remMatch = cleanValue.match(/^(\d+(?:\.\d+)?)rem$/);
   if (remMatch) {
-    return parseFloat(remMatch[1]) * 16
+    return parseFloat(remMatch[1]) * 16;
   }
   
   // Match em values (e.g., "1em", "1.5em") - convert to px (assuming 16px base)
-  const emMatch = cleanValue.match(/^(\d+(?:\.\d+)?)em$/)
+  const emMatch = cleanValue.match(/^(\d+(?:\.\d+)?)em$/);
   if (emMatch) {
-    return parseFloat(emMatch[1]) * 16
+    return parseFloat(emMatch[1]) * 16;
   }
   
-  return null
+  return null;
 } 

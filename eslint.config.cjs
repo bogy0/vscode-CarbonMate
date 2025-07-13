@@ -11,6 +11,21 @@ module.exports = [
       parserOptions: {
         ecmaVersion: 2022,
         sourceType: 'module'
+      },
+      globals: {
+        setTimeout: 'readonly',
+        clearTimeout: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+        console: 'readonly',
+        process: 'readonly',
+        Buffer: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        module: 'readonly',
+        require: 'readonly',
+        exports: 'readonly',
+        global: 'readonly'
       }
     },
     plugins: {

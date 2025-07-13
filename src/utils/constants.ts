@@ -13,4 +13,4 @@ export const SPACING_PROPERTIES = [
   'box-shadow', 'text-shadow',
   'letter-spacing', 'word-spacing',
   'line-height'
-] as const 
+] as const; 
