@@ -2,7 +2,7 @@
   "name": "vscode-carbonmate",
   "displayName": "CarbonMate",
   "description": "VS Code extension that provides Carbon Design System token suggestions for SCSS files. Automatically detects SCSS files and suggests Carbon spacing tokens when writing CSS properties like margin and padding.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "BalintLendvai",
   "icon": "images/icon.png",
   "repository": {
