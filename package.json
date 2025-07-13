@@ -10,13 +10,15 @@
     "url": "https://github.com/balintlendvai/vscode-CarbonMate.git"
   },
   "engines": {
-    "vscode": "^1.102.0"
+    "vscode": "^1.99.0"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onLanguage:scss"
+    "onLanguage:scss",
+    "onCommand:carbonmate.fixAll",
+    "onCommand:carbonmate.refresh"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -26,7 +28,7 @@
         "carbonmate.enable": {
           "type": "boolean",
           "default": true,
-          "description": "Enable CarbonMate token suggestions"
+          "description": "Enable CarbonMate (IBM's Carbon Design System) token suggestions"
         }
       }
     },
@@ -62,7 +64,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@types/vscode": "^1.102.0",
+    "@types/vscode": "^1.99.0",
     "@typescript-eslint/eslint-plugin": "^8.36.0",
     "@typescript-eslint/parser": "^8.36.0",
     "eslint": "^9.31.0",
