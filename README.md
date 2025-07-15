@@ -9,6 +9,7 @@ A VS Code extension that provides Carbon Design System token suggestions for SCS
 
 - **SCSS File Detection**: Automatically activates when editing SCSS files
 - **Carbon Spacing Tokens**: Provides suggestions for all Carbon Design System spacing tokens
+- **Carbon Typography Tokens**: Access all Carbon type sets with detailed typography specifications
 - **Smart Suggestions**: Only shows spacing token suggestions when writing margin or padding properties
 - **Rich Documentation**: Each token includes rem and px values with descriptions
 - **Hardcoded Value Detection**: Detects hardcoded spacing values and suggests Carbon token replacements
@@ -34,6 +35,37 @@ The extension provides suggestions for all 13 Carbon spacing tokens:
 | `layout.$spacing-11` | 5rem | 80px | 5XL spacing |
 | `layout.$spacing-12` | 6rem | 96px | 6XL spacing |
 | `layout.$spacing-13` | 10rem | 160px | 7XL spacing |
+
+## Carbon Typography Tokens
+
+The extension provides access to all Carbon type sets with detailed typography specifications. Use the Command Palette to browse and copy typography tokens to your clipboard.
+
+### Available Type Set Groups
+
+- **Small Style**: Code snippets, labels, helper text, and legal copy
+- **Body**: Body text for short and long paragraphs
+- **Fixed Headings**: Component and layout headings with fixed sizes
+- **Fluid Headings**: Responsive headings that scale with viewport
+- **Fluid Callouts**: Quotations and larger paragraphs
+- **Fluid Display**: Large display text for hero sections
+
+### Typography Token Details
+
+Each typography token includes:
+- **Font Size**: Both pixel and rem values
+- **Font Weight**: Numeric weight (300, 400, 600)
+- **Line Height**: Both pixel and rem values
+- **Letter Spacing**: Spacing between characters
+- **Description**: Usage guidelines and context
+
+### Example Typography Tokens
+
+| Token | Font Size | Weight | Line Height | Letter Spacing | Use Case |
+|-------|-----------|--------|-------------|----------------|----------|
+| `$heading-07` | 54px / 3.375rem | 300 | 64px / 4rem | 0px | Large layout headings |
+| `$body-01` | 14px / .875rem | 400 | 20px / 1.25rem | .16px | Long body paragraphs |
+| `$code-01` | 12px / .75rem | 400 | 16px / 1rem | .32px | Inline code snippets |
+| `$label-01` | 12px / .75rem | 400 | 16px / 1rem | .32px | Field labels and captions |
 
 ## Installation
 
@@ -69,6 +101,14 @@ The extension provides suggestions for all 13 Carbon spacing tokens:
    - Type `CarbonMate`
    - Select `Fix all hardcoded spacing values`
 5. The extension will automatically replace all hardcoded values with their closest matching Carbon tokens in the file
+
+### 3. Typography Token Access
+
+1. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open Command Palette
+2. Type `CarbonMate: Show Type Sets`
+3. Browse through grouped typography tokens with detailed specifications
+4. Select a token to copy it to your clipboard (e.g., `$heading-07`)
+5. Paste the token into your SCSS file where needed
 
 ### Example
 
@@ -114,6 +154,7 @@ The extension can detect and suggest replacements for:
 
 - `CarbonMate: Fix All Hardcoded Spacing Values` - Replace all hardcoded spacing values in the current file
 - `CarbonMate: Refresh Code Check` - Manually refresh the code analysis
+- `CarbonMate: Show Type Sets` - Browse and copy Carbon typography tokens to clipboard
 
 ## Development
 
@@ -168,6 +209,7 @@ The extension can be configured through VS Code settings:
 ## Dependencies
 
 - `@carbon/layout`: Carbon Design System layout tokens
+- `@carbon/type`: Carbon Design System typography tokens
 - `@types/vscode`: VS Code extension API types
 - `typescript`: TypeScript compiler
 
