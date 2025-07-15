@@ -19,7 +19,8 @@
     "onLanguage:scss",
     "onCommand:carbonmate.fixAll",
     "onCommand:carbonmate.refresh",
-    "onCommand:carbonmate.showTypeSets"
+    "onCommand:carbonmate.showTypeSets",
+    "onCommand:carbonmate.showColorTokens"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -47,6 +48,11 @@
       {
         "command": "carbonmate.showTypeSets",
         "title": "CarbonMate: Show Type Sets",
+        "category": "CarbonMate"
+      },
+      {
+        "command": "carbonmate.showColorTokens",
+        "title": "CarbonMate: Show Color Tokens",
         "category": "CarbonMate"
       }
     ]
