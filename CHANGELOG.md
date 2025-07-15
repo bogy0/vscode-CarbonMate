@@ -2,6 +2,46 @@
 
 All notable changes to the "CarbonMate" extension will be documented in this file.
 
+## [1.2.0] - 2025-01-27
+
+### Added
+- **Carbon Typography Tokens**: New command palette action to browse and copy Carbon type sets
+  - Access to all Carbon typography tokens with detailed specifications
+  - Grouped display by category (Small Style, Body, Fixed Headings, Fluid Headings, etc.)
+  - Detailed typography information including font size, weight, line height, and letter spacing
+  - One-click clipboard copying of typography tokens
+  - Command: `CarbonMate: Show Type Sets`
+
+- **Carbon Color Tokens**: New command palette action to browse and copy Carbon color tokens
+  - Access to all Carbon color tokens with detailed color specifications
+  - Grouped display by category (Interactive, UI, Text, Icon, Field, Inverse, Support, Overlay)
+  - Detailed color information including hex values and RGB values with rgba() formatting
+  - One-click clipboard copying of color tokens
+  - Command: `CarbonMate: Show Color Tokens`
+
+### New Features
+- **Type Sets Manager**: Dedicated manager for typography token functionality
+  - `src/managers/type-sets-manager.ts` - Core typography management logic
+  - `src/utils/typography.ts` - Typography token definitions and utilities
+  - Grouped QuickPick interface with separators for better organization
+
+- **Color Tokens Manager**: Dedicated manager for color token functionality
+  - `src/managers/color-tokens-manager.ts` - Core color management logic
+  - `src/utils/colors.ts` - Color token definitions and utilities
+  - Enhanced color value formatting with rgba() support
+
+### Technical Improvements
+- Added `@carbon/type` dependency for typography token support
+- Enhanced extension architecture with modular managers
+- Improved command palette integration with grouped token displays
+- Better separation of concerns with dedicated utility files
+
+### Documentation
+- Updated README with comprehensive documentation for new features
+- Added typography and color token usage examples
+- Enhanced feature descriptions and command documentation
+- Added detailed token specifications and usage guidelines
+
 ## [1.1.0] - 2025-07-13
 
 ### Changed

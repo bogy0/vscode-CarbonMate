@@ -10,6 +10,7 @@ A VS Code extension that provides Carbon Design System token suggestions for SCS
 - **SCSS File Detection**: Automatically activates when editing SCSS files
 - **Carbon Spacing Tokens**: Provides suggestions for all Carbon Design System spacing tokens
 - **Carbon Typography Tokens**: Access all Carbon type sets with detailed typography specifications
+- **Carbon Color Tokens**: Browse and copy Carbon color tokens with detailed specifications
 - **Smart Suggestions**: Only shows spacing token suggestions when writing margin or padding properties
 - **Rich Documentation**: Each token includes rem and px values with descriptions
 - **Hardcoded Value Detection**: Detects hardcoded spacing values and suggests Carbon token replacements
@@ -67,6 +68,39 @@ Each typography token includes:
 | `$code-01` | 12px / .75rem | 400 | 16px / 1rem | .32px | Inline code snippets |
 | `$label-01` | 12px / .75rem | 400 | 16px / 1rem | .32px | Field labels and captions |
 
+## Carbon Color Tokens
+
+The extension provides access to all Carbon color tokens with detailed color specifications. Use the Command Palette to browse and copy color tokens to your clipboard.
+
+### Available Color Token Groups
+
+- **Interactive**: Primary, secondary, tertiary, and quaternary interactive colors
+- **UI**: Background colors for different UI surfaces and levels
+- **Text**: Text colors for various content types and contexts
+- **Icon**: Icon colors for different visual hierarchies
+- **Field**: Input field background colors
+- **Inverse**: Colors for dark/light theme inversions
+- **Support**: Semantic colors for error, success, warning, and info states
+- **Overlay**: Overlay colors for modals and backdrop elements
+
+### Color Token Details
+
+Each color token includes:
+- **Hex Value**: Standard hexadecimal color code
+- **RGB Value**: RGB color values with alpha channel
+- **Usage Description**: Guidelines for when and how to use the color
+- **Group Classification**: Category and purpose of the color
+
+### Example Color Tokens
+
+| Token | Hex | RGB | Usage |
+|-------|-----|-----|-------|
+| `$interactive-01` | #0f62fe | rgba(15, 98, 254, 1) | Primary buttons, links, and interactive elements |
+| `$text-01` | #161616 | rgba(22, 22, 22, 1) | Primary text and headings |
+| `$support-01` | #da1e28 | rgba(218, 30, 40, 1) | Error states and destructive actions |
+| `$ui-01` | #ffffff | rgba(255, 255, 255, 1) | Main page backgrounds and card surfaces |
+| `$overlay-01` | rgba(22, 22, 22, 0.5) | rgba(22, 22, 22, 0.5) | Modal overlays and backdrop elements |
+
 ## Installation
 
 ### From VSIX (Local Installation)
@@ -110,6 +144,14 @@ Each typography token includes:
 4. Select a token to copy it to your clipboard (e.g., `$heading-07`)
 5. Paste the token into your SCSS file where needed
 
+### 4. Color Token Access
+
+1. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac) to open Command Palette
+2. Type `CarbonMate: Show Color Tokens`
+3. Browse through grouped color tokens with hex and RGB values
+4. Select a token to copy it to your clipboard (e.g., `$interactive-01`)
+5. Paste the token into your SCSS file where needed
+
 ### Example
 
 ```scss
@@ -123,6 +165,11 @@ Each typography token includes:
   // Hardcoded values that can be replaced
   margin: 16px;                 // 🔄 Can be replaced with layout.$spacing-05
   padding: 24px;                // 🔄 Can be replaced with layout.$spacing-06
+  
+  // Color token usage
+  background-color: $ui-01;     // ✅ Carbon color token
+  color: $text-01;              // ✅ Carbon color token
+  border-color: $interactive-01; // ✅ Carbon color token
 }
 ```
 
@@ -155,6 +202,7 @@ The extension can detect and suggest replacements for:
 - `CarbonMate: Fix All Hardcoded Spacing Values` - Replace all hardcoded spacing values in the current file
 - `CarbonMate: Refresh Code Check` - Manually refresh the code analysis
 - `CarbonMate: Show Type Sets` - Browse and copy Carbon typography tokens to clipboard
+- `CarbonMate: Show Color Tokens` - Browse and copy Carbon color tokens to clipboard
 
 ## Development
 
